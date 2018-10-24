@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skynix</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<form id="main" method="post" action="/">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+				<label>Имя пользователя:</label>
+				<input class="form-control" type="text" name="user" required pattern="[а-яА-Яa-zA-Z0-9_]{2,}" value="" placeholder="Ваше имя">
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<label>Email:</label>
+			<input class="form-control" type="email" name="email" placeholder="tcs@gmail.com" required />
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<label>Ваш город:</label>
+			<select name="city" class="form-control" class="class01">
+	                            <option class="class01" value="" disabled selected>Выберите город</option>
+	                            <option class="class01" value="Kiev">Киев</option>
+	                            <option class="class01" value="Dnepr">Днепр</option>
+	                            <option class="class01" value="Odessa">Одесса</option>
+	                            <option class="class01" value="Lviv">Львов</option>
+	                            <option class="class01" value="Kharkiv">Харьков</option>
+	    	</select>
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<label>Пароль:</label>
+			<input class="form-control" type="password" name="password" required />
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<label>Подтвердите пароль:</label>
+			<input class="form-control" type="password" name="password_again" required />
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<input type="submit" class="btn btn-success form-control" name="" placeholder="******" value="Регистрация">
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	</form>
+</body>
+</html>
