@@ -28,24 +28,25 @@ $(document).ready(function() {
 			        });
 			return false;
 	    });
-
+	//Close popup and open form 
 	$('#close').click(function() {
 		$('#registration').show();
 		$("#confirm").hide();
 	});
 });
-
+//form field validation function
 function cheked_form(){
+	//fields
 	var user_field = $("input[name='user']");
 	var email_field = $("input[name='email']");
 	var password_field = $("input[name='password']");
 	var password_confirm_field = $("input[name='password_confirm']");
-
+	//indication of verification methods for fields
 	var user = validation(user_field,'check_empty','check_char', null, null, null);
 	var email = validation(email_field,'check_empty', null, 'check_email', null, null);
 	var password = validation(password_field,'check_empty', null, null, 'check_length', null);
 	var password_confirm = validation(password_confirm_field,'check_empty', null, null, 'check_length', password_field);
-
+	//if all fields correct return true
 	if((user && email && password && password_confirm) === false){
 		 return false;
 	}else{
@@ -54,48 +55,45 @@ function cheked_form(){
 	}
 }
 
-
-
+//validation function
 function validation(field, check_empty, check_char, check_email, check_length, password_confirm){
 	if(check_empty !== null){
 		if (field.val()==''){
-			field.next().html("*This field is required");
+			field.next().html("*This field is required!");
      		return false;
 		}
 	}
-
+//check no empty value
 	if(check_char !== null){
 		var reg = new RegExp("[а-яА-Яa-zA-z_]{2,}");
 		if (!reg.test(field.val())){
-			field.next().html("*Incorrect name");
+			field.next().html("*Incorrect name!");
      		return false;
 		}
 	}
-    
+ //check charset value   
 	if(check_email !== null){
 		var reg = new RegExp("[@a-zA-z_0_9]{4}");
 		if (!reg.test(field.val())){
-			field.next().html("*Incorrect email");
+			field.next().html("*Incorrect email!");
      		return false;
 		}
 	}
-
+ //check lenght   
 	if(check_length !== null){
 		if(field.val().length<6){
-			field.next().html("*At least 6 characters");
+			field.next().html("*At least 6 characters!");
      		return false;
 		}
 	}
 
-
+//check confirm value
 	if(password_confirm !== null){
 		if(field.val() !== password_confirm.val()){
-			field.next().html("*Passwords do not match");
+			field.next().html("*Passwords do not match!");
      		return false;
 		}
 	}
-
-
 	field.next().html('');
 	return true;
 }
